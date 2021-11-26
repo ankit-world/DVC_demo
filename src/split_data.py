@@ -9,12 +9,12 @@ from get_data import read_params
 
 
 def split_and_saved_data(config_path):
-    config_path = read_params(config_path)
-    train_data_path = config_path["split_data"]["train_path"]
-    test_data_path = config_path["split_data"]["test_path"]
-    raw_data_path = config_path["load_data"]["raw_dataset_csv"]
-    split_ratio = config_path["split_data"]["test_size"]
-    random_state = config_path["base"]["random_state"]
+    config = read_params(config_path)
+    train_data_path = config["split_data"]["train_path"]
+    test_data_path = config["split_data"]["test_path"]
+    raw_data_path = config["load_data"]["raw_dataset_csv"]
+    split_ratio = config["split_data"]["test_size"]
+    random_state = config["base"]["random_state"]
 
     df = pd.read_csv(raw_data_path, sep=",")
 
